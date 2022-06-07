@@ -1,17 +1,15 @@
 import React from 'react';
-import millify from 'millify';
-import { Collapse, Row, Col, Typography, Avatar } from 'antd';
-import HTMLReactParser from 'html-react-parser';
+
+import { Row, Col,} from 'antd';
+
 
 import { useGetExchangesQuery } from '../services/cryptoApi';
 import Loader from './loader';
 
-const { Text } = Typography;
-const { Panel } = Collapse;
 
 const Exchange = () => {
   const { data, isFetching } = useGetExchangesQuery();
-  const exchangesList = data?.data?.exchanges;
+  // const exchangesList = data?.data?.exchanges;
  // Note: To access this endpoint you need premium plan
   if (isFetching) return <Loader />;
 
